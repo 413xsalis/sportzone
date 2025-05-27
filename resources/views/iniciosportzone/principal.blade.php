@@ -1,6 +1,8 @@
 @extends('iniciosportzone.layout')
 
 @section('content')
+
+<main class="app-content">
 <section class="inicio">
     <div class="content">
             <h3> JARD TI <span> TECNOLOGIA Y Desarrollo </span></h3>
@@ -109,4 +111,6 @@
         <input type="submit" class="boton" value="ENVIAR">
     </form>
 </section>
+</main>
+
 @endsection
