@@ -7,6 +7,24 @@ Route::get('/', function () {
 
 // Route::get('/admin/principal', [AdminController::class, 'principal'])
 //     ->name('administrador.admin.principal');
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/principal', function () {
+        return view('administrador.admin.principal');
+    })->name('admin.dashboard');
+    
+    Route::get('/colaborador/principal', function () {
+        return view('colaborador.inicio_colab.principal');
+    })->name('colaborador.dashboard');
+    
+    Route::get('/instructor/principal', function () {
+        return view('instructor.inicio.principal');
+    })->name('instructor.dashboard');
+    
+    // Ruta home por defecto (puedes eliminarla si no la necesitas)
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
 
 Route::prefix('admin')->group(function() {
     Route::get('/principal', [AdminController::class, 'principal'])->name('admin.principal');
@@ -19,3 +37,4 @@ Route::prefix('admin')->group(function() {
 Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
+
