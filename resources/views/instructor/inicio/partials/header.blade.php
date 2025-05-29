@@ -1,29 +1,84 @@
-<!DOCTYPE html>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{{ route('instructor.principal') }}">
+            <i class="bi bi-speedometer me-2"></i> SportZone
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ route('instructor.principal') }}">
+                        <i class="bi bi-house-door"></i> Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-calendar"></i> Horarios
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-people"></i> Alumnos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-clipboard-data"></i> Reportes
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Configuración</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/main.css"> -->
   <!-- Font-icon css-->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <title>Proyecto sportzone</title>
 </head>
 
-<body class="app sidebar-mini">
+<body class="app sidebar-mini"> -->
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="index.html">Proyecto SportZone</a>
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+  <!-- <header class="app-header"><a class="app-header__logo" href="index.html">Proyecto SportZone</a> -->
+    <!-- Sidebar toggle button-->
+     <!-- <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a> -->
     <!-- Navbar Right Menu-->
-    <ul class="app-nav">
+    <!-- <ul class="app-nav">
       <li class="app-search">
         <input class="app-search__input" type="search" placeholder="Search">
         <button class="app-search__button"><i class="bi bi-search"></i></button>
-      </li>
+      </li> -->
       <!--Notification Menu-->
-      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+      <!-- <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
         <ul class="app-notification dropdown-menu dropdown-menu-right">
           <li class="app-notification__title">You have 4 new notifications.</li>
           <div class="app-notification__content">
@@ -66,9 +121,9 @@
           </div>
           <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
         </ul>
-      </li>
+      </li> -->
       <!-- User Menu-->
-      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="bi bi-person fs-4"></i></a>
+      <!-- <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="bi bi-person fs-4"></i></a>
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
           <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
           <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
@@ -76,9 +131,9 @@
         </ul>
       </li>
     </ul>
-  </header>
+  </header> -->
   <!-- Sidebar menu-->
-  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <!-- <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://i.pinimg.com/736x/1b/f1/e3/1bf1e3ee658f2b7b6d513056280c0305.jpg" alt="User Image">
       <div>
@@ -108,4 +163,4 @@
         </a>
       </li>
     </ul>
-  </aside>
+  </aside> -->
