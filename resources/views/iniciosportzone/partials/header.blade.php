@@ -132,7 +132,7 @@
                 <ul class="navbar-nav auth-nav">
                     @auth
                         <li class="nav-item">
-                            <a href="{{ url('/dashboad') }}" class="nav-link text-custom-green">
+                            <a href="{{ route('admin.principal') }}" class="nav-link text-custom-green">
                                 Dashboard
                             </a>
                         </li>
