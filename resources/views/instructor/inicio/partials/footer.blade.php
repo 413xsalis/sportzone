@@ -13,28 +13,15 @@
             </div>
             <div class="col-md-6 text-md-end">
                 <h5>Contacto</h5>
-                <p class="text-muted mb-0"><i class="bi bi-envelope me-2"></i> info@sportzone.edu</p>
-                <p class="text-muted"><i class="bi bi-telephone me-2"></i> +57 123 456 7890</p>
+                <p class="text-muted mb-0">
+                    <i class="bi bi-envelope me-2"></i> info@sportzone.edu
+                </p>
+                <p class="text-muted mb-0">
+                    <i class="bi bi-telephone me-2"></i> +57 123 456 7890
+                </p>
                 <p class="text-muted mb-0">v1.0.0</p>
                 <p class="text-muted">© {{ date('Y') }} Todos los derechos reservados</p>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- Essential javascripts for application to work-->
-<script src="assets/js/jquery-3.7.0.min.js"></script>
-
-<!-- 1) Popper.js (necesario para Bootstrap JS) -->
-<script src="assets/js/popper.min.js"></script>
-
-<script src="assets/js/bootstrap.min.js"></script>
-
-<!-- 2) Script de edición rápida de horarios -->
-<script src="assets/js/horarios.js"></script>
-
-<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>

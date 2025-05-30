@@ -10,9 +10,9 @@ class InstructorController extends Controller
     /**
      * Muestra la vista principal del instructor
      */
-    public function inicio(): View
+    public function principal(): View
     {
-        return view('instructor.inicio'); 
+        return view('instructor.inicio.principal'); 
     }
 }
 
