@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,7 +21,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         $role = $request->input('role');
-        
+
         switch ($role) {
             case 'administrador':
                 return redirect()->route('admin.dashboard');
@@ -31,6 +32,16 @@ class LoginController extends Controller
             default:
                 return redirect($this->redirectTo);
         }
+    }
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('dashboard');
+        }
+
+        return back()->with('error', 'Usuario o contraseña incorrectos.');
     }
 }
 
