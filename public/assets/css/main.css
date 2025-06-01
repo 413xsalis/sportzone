@@ -257,7 +257,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: calc(1.25625rem + 0.075vw);
+  font-size: calc(2rem + 0.5vw);
 }
 @media (min-width: 1200px) {
   h4, .h4 {
@@ -356,7 +356,7 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: #00c6a7;
   text-decoration: underline;
 }
 a:hover {
@@ -13456,7 +13456,7 @@ textarea.form-control-lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #00695C;
+  background-color: #1e4d92;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13491,7 +13491,7 @@ textarea.form-control-lg {
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #005046;
+    background-color: #04826f;
   }
 }
 .app-header__logo:focus, .app-header__logo:hover {
@@ -13678,7 +13678,7 @@ textarea.form-control-lg {
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #222d32;
+  background:linear-gradient(to top, #00c6a7, #1e4d92);
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease, width 0.3s ease;
