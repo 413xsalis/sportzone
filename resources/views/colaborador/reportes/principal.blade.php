@@ -12,6 +12,28 @@
           <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
         </ul>
       </div>
+
+     <!-- reportes -->
+
+<div class="container mt-4">
+    <h2 class="mb-4">Generar Reporte</h2>
+    <form action="{{ route('reportes.generar') }}" method="GET" class="row g-3">
+        <div class="col-md-4">
+            <label for="fecha_inicio" class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
+        </div>
+
+        <div class="col-md-4">
+            <label for="fecha_fin" class="form-label">Fecha Fin</label>
+            <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" required>
+        </div>
+
+        <div class="col-md-4 align-self-end">
+            <button type="submit" class="btn btn-primary w-100">Generar PDF</button>
+        </div>
+    </form>
+</div>
+
      <!-- <div class="row">
         <div class="col-md-6 col-lg-3">
           <div class="widget-small primary coloured-icon"><i class="icon bi bi-people fs-1"></i>
@@ -95,6 +117,10 @@
             </div>
           </div>
         </div>
+
+
+
+        
       </main>
     </div>
   </div>

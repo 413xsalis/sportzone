@@ -1,14 +1,14 @@
- 
- <?php
-
+  <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
 
+
 // Route::get('/admin/principal', [AdminController::class, 'principal'])
 //     ->name('administrador.admin.principal');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
@@ -39,9 +39,14 @@ Route::prefix('admin')->group(function() {
 Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
+
+Route::prefix('admin')->group(function() {
+    Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
+});
+
 Route::get('/', function () {
-    return view('colaborador.gestion_clases.principal');
-}); 
+    return view('colaborador.reportes.principal');
+});
 
 
 /*
