@@ -47,3 +47,21 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
     }
 };
+
+class AddActivoToEstudiantesTable extends Migration
+{
+    public function up()
+    {
+        Schema::table('estudiantes', function (Blueprint $table) {
+            // Agrega un booleano "activo" (por defecto verdadero)
+            $table->boolean('activo')->default(true);
+        });
+    }
+
+    public function down()
+    {
+        Schema::table('estudiantes', function (Blueprint $table) {
+            $table->dropColumn('activo');
+        });
+    }
+}
