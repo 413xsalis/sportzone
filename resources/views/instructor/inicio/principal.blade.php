@@ -1,3 +1,6 @@
+@extends('instructor.inicio.layout')
+
+@section('content')
 <main class="app-content">
   <div class="app-title d-flex justify-content-between align-items-center">
     <div>
@@ -183,3 +186,4 @@
     </div>
   </div>
 </div>
+    @endsection
