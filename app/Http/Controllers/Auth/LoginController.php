@@ -18,11 +18,52 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Valida los campos del login (incluyendo el rol)
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
+            'role' => 'required|in:administrador,colaboradores,instructores'
+        ]);
+    }
+
+    /**
+     * Maneja el intento de login
+     */
+    public function login(Request $request)
+    {
+        // Validar los campos primero
+        $this->validateLogin($request);
+
+        // Intentar autenticación
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+        }
+
+        // Si falla la autenticación
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    /**
+     * Redirección después de autenticación exitosa
+     */
     protected function authenticated(Request $request, $user)
     {
-        $role = $request->input('role');
+        $selectedRole = $request->input('role');
+        
+        // Verificar que el rol seleccionado coincida con el del usuario
+        if ($user->role !== $selectedRole) {
+            $this->guard()->logout();
+            return redirect()->route('login')
+                ->withErrors(['role' => 'El rol seleccionado no coincide con tu perfil de usuario.'])
+                ->withInput($request->only('email', 'remember'));
+        }
 
-        switch ($role) {
+        // Redirección basada en el rol
+        switch ($selectedRole) {
             case 'administrador':
                 return redirect()->route('admin.dashboard');
             case 'colaborador':
@@ -33,61 +74,16 @@ class LoginController extends Controller
                 return redirect($this->redirectTo);
         }
     }
-    public function login(Request $request)
+
+    /**
+     * Mensaje cuando falla el login
+     */
+    protected function sendFailedLoginResponse(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
-        }
-
-        return back()->with('error', 'Usuario o contraseña incorrectos.');
+        return back()
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors([
+                $this->username() => __('auth.failed'),
+            ]);
     }
 }
-
-
-// ?php
-
-// namespace App\Http\Controllers\Auth;
-
-// use App\Http\Controllers\Controller;
-// use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-
-// namespace App\Http\Controllers\Auth;
-
-// use App\Http\Controllers\Controller;  // Asegúrate que esta línea esté presente
-// use Illuminate\Foundation\Auth\AuthenticatesUsers;  // Verifica la ortografía (debe ser AuthenticatesUsers, no AuthenticatedUsers)
-// class LoginController extends Controller
-// {
-//     /*
-//     |--------------------------------------------------------------------------
-//     | Login Controller
-//     |--------------------------------------------------------------------------
-//     |
-//     | This controller handles authenticating users for the application and
-//     | redirecting them to your home screen. The controller uses a trait
-//     | to conveniently provide its functionality to your applications.
-//     |
-//     */
-
-//     use AuthenticatesUsers;
-
-//     /**
-//      * Where to redirect users after login.
-//      *
-//      * @var string
-//      */
-//     protected $redirectTo = '/home';
-
-//     /**
-//      * Create a new controller instance.
-//      *
-//      * @return void
-//      */
-//     public function __construct()
-//     {
-//         $this->middleware('guest')->except('logout');
-//         $this->middleware('auth')->only('logout');
-//     }
-// } 

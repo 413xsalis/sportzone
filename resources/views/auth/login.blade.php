@@ -65,7 +65,7 @@
 
                                         <div class="mb-4">
                                             <label for="roleSelect" class="form-label">Selecciona tu rol</label>
-                                            <select id="roleSelect" class="form-select">
+                                            <select id="role" name="role" class="form-select">
                                                 <option value="administrador">Administrador</option>
                                                 <option value="colaboradores">Colaboradores</option>
                                                 <option value="instructores">Instructores</option>
