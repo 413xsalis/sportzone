@@ -1,13 +1,14 @@
 <?php
+use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
 
-// Route::get('/admin/principal', [AdminController::class, 'principal'])
-//     ->name('administrador.admin.principal');
-Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/principal', function () {
@@ -30,11 +31,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/principal', [AdminController::class, 'principal'])->name('admin.principal');
 });
 
-Route::prefix('admin')->group(function() {
-    Route::get('/gestion', [AdminController::class, 'gestion'])->name('admin.Gestion_usuarios');
-});
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
 
+Route::get('/admin/gestion-usuarios', function () {
+    return view('administrador.admin.gestion_usuarios');
+})->name('admin.Gestion_usuarios');

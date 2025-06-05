@@ -42,4 +42,8 @@
 </table>
 
 
-@endsection    
+@section('content')
+    <div id="react-gestion-usuarios"></div>
+    @viteReactRefresh
+    @vite(['resources/js/admin/GestionUsuarios.jsx'])
+@endsection

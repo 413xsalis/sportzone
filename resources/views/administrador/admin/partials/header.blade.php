@@ -91,8 +91,9 @@
 
         </div>
       </div>
-        <a class="app-menu__item" href="{{ route('admin.Gestion_usuarios') }}"></i><span class="app-menu__label">Gestion de
-            usuarios</span></a>
+<a class="app-menu__item" href="{{ route('admin.Gestion_usuarios') }}">
+  <span class="app-menu__label">Gestión de usuarios</span>
+</a>
 
         <a class="app-menu__item" href="{{ route('admin.Formulario_empleados') }}"></i><span class="app-menu__label">Formulario de
             empleados</span></a>

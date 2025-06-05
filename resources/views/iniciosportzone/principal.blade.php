@@ -4,7 +4,7 @@
 
     <main class="app-content">
         <!-- Sección Inicio -->
-        <section id="inicio" class="py-5" style="background: url('{{ asset('assets/imginicio/inicio_fondo.png') }}') no-repeat; background-size: cover; background-position: center;">
+        <section id="inicio" class="py-5" style="background: url('{{ asset('../assets/') }}') no-repeat; background-size: cover; background-position: center;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -164,4 +164,6 @@
             </div>
         </section>
     </main>
-    @endsection
+        @viteReactRefresh
+    @vite(['resources/js/app.js'])
+@endsection
