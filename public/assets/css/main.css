@@ -356,7 +356,7 @@ sup {
 }
 
 a {
-  color: #00c6a7;
+  color: #f9fbfc;
   text-decoration: underline;
 }
 a:hover {
@@ -3368,8 +3368,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #FFF;
-  --bs-btn-bg: #00695C;
-  --bs-btn-border-color: #00695C;
+  --bs-btn-bg: #1e4d92;
+  --bs-btn-border-color: #00c6a7;
   --bs-btn-hover-color: #FFF;
   --bs-btn-hover-bg: #00594e;
   --bs-btn-hover-border-color: #00544a;
@@ -13405,7 +13405,7 @@ textarea.form-control-lg {
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   padding: 30px;
-  background-color: #E5E5E5;
+  background-color: #f9fcfd;
   -webkit-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
 }
@@ -13456,7 +13456,7 @@ textarea.form-control-lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #1e4d92;
+  background-color: #00c6a7;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13491,7 +13491,7 @@ textarea.form-control-lg {
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #04826f;
+    background-color: #00c6a7;
   }
 }
 .app-header__logo:focus, .app-header__logo:hover {
@@ -13678,7 +13678,7 @@ textarea.form-control-lg {
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background:linear-gradient(to top, #00c6a7, #1e4d92);
+  background:linear-gradient(to top,#1e4d92, #00c6a7);
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease, width 0.3s ease;
@@ -13987,7 +13987,7 @@ textarea.form-control-lg {
 }
 .app-title h1, .app-title .h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: 400;
 }
 .app-title p {

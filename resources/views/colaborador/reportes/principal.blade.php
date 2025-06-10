@@ -8,10 +8,10 @@
           <p> Modulo Colaborador</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+          <!--<li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> -->
         </ul>
-      </div>
+      </div> 
 
      <!-- reportes -->
 
@@ -88,19 +88,20 @@
       </div>-->
 
         <!-- Main content -->
+
+        <div class="row">
         <main class="col-md-10 main-content p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h1 class="titulo">Calendario</h1>
-          <div>
-            <i class="bi bi-bell mx-2"></i>
+          <!--<div>
+           <!- <i class="bi bi-bell mx-2"></i>
             <i class="bi bi-box-arrow-right mx-2"></i>
             <i class="bi bi-person-circle"></i>
-          </div>
-        </div>
+          </div>->
+        </div>-->
 
-        <div class="row">
           <!-- Calendario -->
-          <div class="col-md-6 mb-4">
+          <div class="col-md-8 mb-4">
             <label for="calendar" class="form-label">Selecciona una fecha:</label>
             <input type="date" class="form-control" id="calendar">
           </div>
