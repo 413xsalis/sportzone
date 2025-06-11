@@ -21,14 +21,14 @@ class LoginController extends Controller
     /**
      * Valida los campos del login (incluyendo el rol)
      */
-    protected function validateLogin(Request $request)
-    {
-        $request->validate([
-            $this->username() => 'required|string|email',
-            'password' => 'required|string',
-            'role' => 'required|in:administrador,colaboradores,instructores'
-        ]);
-    }
+protected function validateLogin(Request $request)
+{
+    $request->validate([
+        $this->username() => 'required|string|email',
+        'password' => 'required|string',
+        'role' => 'required|in:administrador,colaborador,instructor' // Ajustado
+    ]);
+}
 
     /**
      * Maneja el intento de login
@@ -65,9 +65,9 @@ class LoginController extends Controller
         // Redirección basada en el rol
         switch ($selectedRole) {
             case 'administrador':
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('administrador.admin.principal');
             case 'colaborador':
-                return redirect()->route('colaborador.dashboard');
+                return redirect()->route('administrador.Gestion_usuarios.principal');
             case 'instructor':
                 return redirect()->route('instructor.dashboard');
             default:

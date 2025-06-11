@@ -37,10 +37,11 @@
                                     </div>
 
                                     @if (session('error'))
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        {{ session('error') }}
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            {{ session('error') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
                                     @endif
 
 
@@ -67,8 +68,8 @@
                                             <label for="roleSelect" class="form-label">Selecciona tu rol</label>
                                             <select id="role" name="role" class="form-select">
                                                 <option value="administrador">Administrador</option>
-                                                <option value="colaboradores">Colaboradores</option>
-                                                <option value="instructores">Instructores</option>
+                                                <option value="colaborador">Colaborador</option>
+                                                <option value="instructor">Instructor</option>
                                             </select>
                                         </div>
 
@@ -82,7 +83,8 @@
 
                                         <div class="d-flex align-items-center justify-content-center pb-4">
                                             <p class="mb-0 me-2">No tienes cuenta?</p>
-                                            <a href="{{ route('register') }}" data-mdb-button-init data-mdb-ripple-init>Registrarse</a>
+                                            <a href="{{ route('register') }}" data-mdb-button-init
+                                                data-mdb-ripple-init>Registrarse</a>
                                         </div>
 
 
