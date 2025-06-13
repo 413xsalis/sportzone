@@ -8,8 +8,8 @@
           <p> Modulo Colaborador</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+          <!--<li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> -->
         </ul>
       </div>
      <!-- <div class="row">
@@ -129,9 +129,9 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h1 class="titulo"> Calendario </h1>
           <div>
-            <i class="bi bi-bell mx-2"></i>
+            <!--<i class="bi bi-bell mx-2"></i>
             <i class="bi bi-box-arrow-right mx-2"></i>
-            <i class="bi bi-person-circle"></i>
+            <i class="bi bi-person-circle"></i> -->
           </div>
         </div>
 
