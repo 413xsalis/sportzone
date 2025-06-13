@@ -78,17 +78,17 @@
         <div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="app-sidebar__user-designation breadcrumb-item"><a href="index.php?accion=inicio_admin">Inicio</a></li>
+          <li class="app-sidebar__user-designation breadcrumb-item"><a href="#">Inicio</a></li>
 
         </div>
       </div>
 
       <ul class="app-menu">
-        <a class="app-menu__item" href="index.php?accion=gestion_clases"></i><span
+        <a class="app-menu__item" href="{{ route('colab.gestion_clases') }}"></i><span
             class="app-menu__label">Gestion de clases</span></a>
-        <a class="app-menu__item" href="index.php?accion=inscripcion_estudiantes"></i><span
+        <a class="app-menu__item" href="{{ route('colab.inscripcion') }}"></i><span
             class="app-menu__label">Inscripcíon de Estudiantes</span></a>
-        <a class="app-menu__item" href="index.php?accion=reportes_colab"></i><span
+        <a class="app-menu__item" href="{{ route('colab.reportes') }}"></i><span
             class="app-menu__label">Reportes</span></a>
 
     </aside>
