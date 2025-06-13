@@ -1,11 +1,11 @@
-<?php
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-Route::get('/', function () {
-    return view('iniciosportzone.principal');
-});
+ <?php
+// use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\AdminController;
+// Route::get('/', function () {
+//     return view('iniciosportzone.principal');
+// });
 
-Auth::routes();
+// Auth::routes();
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/admin/principal', function () {
@@ -24,33 +24,81 @@ Auth::routes();
 //     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // });
 
+// Auth::routes();
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/admin/principal', function () {
+//         return view('administrador.admin.principal');
+//     })->name('admin.dashboard')->middleware('role:administrador');
+    
+//     Route::get('/colaborador/principal', function () {
+//         return view('colaborador.inicio_colab.principal');
+//     })->name('colaborador.dashboard')->middleware('role:colaborador');
+    
+//     Route::get('/instructor/principal', function () {
+//         return view('instructor.inicio.principal');
+//     })->name('instructor.dashboard')->middleware('role:instructor');
+    
+//     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// });
+
+// Route::prefix('admin')->group(function() {
+//     Route::get('/principal', [AdminController::class, 'principal'])->name('admin.principal');
+// });
+
+// Route::prefix('admin')->group(function() {
+//     Route::get('/gestion', [AdminController::class, 'gestion'])->name('admin.Gestion_usuarios');
+// });
+
+// Route::prefix('admin')->group(function() {
+//     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
+// });
+ 
+
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+
+// Ruta pública
+Route::get('/', function () {
+    return view('iniciosportzone.principal');
+});
+
+// Rutas de autenticación
 Auth::routes();
 
+// Grupo de rutas protegidas por autenticación
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/principal', function () {
-        return view('administrador.admin.principal');
-    })->name('admin.dashboard')->middleware('role:administrador');
+    // Ruta home por defecto
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     
-    Route::get('/colaborador/principal', function () {
-        return view('colaborador.inicio_colab.principal');
-    })->name('colaborador.dashboard')->middleware('role:colaborador');
+    // Dashboard de administrador (protegido por rol)
+    Route::middleware(['role:administrador'])->group(function () {
+        Route::prefix('admin')->group(function() {
+            Route::get('/principal', function () {
+                return view('administrador.admin.principal');
+            })->name('admin.dashboard');
+            
+            Route::get('/gestion', [AdminController::class, 'gestion'])
+                ->name('admin.Gestion_usuarios');
+                
+            Route::get('/formulario', [AdminController::class, 'formulario'])
+                ->name('admin.Formulario_empleados');
+        });
+    });
     
-    Route::get('/instructor/principal', function () {
-        return view('instructor.inicio.principal');
-    })->name('instructor.dashboard')->middleware('role:instructor');
+    // Dashboard de colaborador (protegido por rol)
+    Route::middleware(['role:colaborador'])->group(function () {
+        Route::get('/colaborador/principal', function () {
+            return view('colaborador.inicio_colab.principal');
+        })->name('colaborador.dashboard');
+    });
     
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Dashboard de instructor (protegido por rol)
+    Route::middleware(['role:instructor'])->group(function () {
+        Route::get('/instructor/principal', function () {
+            return view('instructor.inicio.principal');
+        })->name('instructor.dashboard');
+    });
 });
-
-Route::prefix('admin')->group(function() {
-    Route::get('/principal', [AdminController::class, 'principal'])->name('admin.principal');
-});
-
-Route::prefix('admin')->group(function() {
-    Route::get('/gestion', [AdminController::class, 'gestion'])->name('admin.Gestion_usuarios');
-});
-
-Route::prefix('admin')->group(function() {
-    Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
-});
-
