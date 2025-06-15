@@ -5,6 +5,10 @@ Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
 
+<<<<<<< Updated upstream
+=======
+//Auth::routes();
+>>>>>>> Stashed changes
 
 // Route::get('/admin/principal', [AdminController::class, 'principal'])
 //     ->name('administrador.admin.principal');
@@ -44,6 +48,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
 });
 
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('colaborador.reportes.principal');
 });
@@ -116,3 +121,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 */
+=======
+
+>>>>>>> Stashed changes
