@@ -121,11 +121,15 @@
                     
                     <li class="nav-item">
                         <a class="nav-link text-custom-green" href="#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
+
                         <a class="nav-link text-custom-green" href="#contactos">Contactos</a>
                     </li>
+                                        <li class="nav-item">
+                        <a class="nav-link text-custom-green" href="{{ route('colab.principal') }}">colaborador</a>
+                    </li>
                 </ul>
+
+
                 
                 <!-- Botones de autenticación -->
                 @if (Route::has('login'))
