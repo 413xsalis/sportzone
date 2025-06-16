@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ColabController;
+
 Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
@@ -54,7 +56,3 @@ Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
 
-
-Route::get('/', function () {
-    return view('colaborador.inicio_colab.principal');
-});
