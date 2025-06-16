@@ -56,3 +56,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
 
+Route::get('/', function () {
+    return view('colaborador.inicio_colab.principal');
+});
+
