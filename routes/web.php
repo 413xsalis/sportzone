@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
         return view('colaborador.inicio_colab.principal');
     })->name('colaborador.dashboard')->middleware('role:colaborador');
     
+    
     Route::get('/instructor/principal', function () {
         return view('instructor.inicio.principal');
     })->name('instructor.dashboard')->middleware('role:instructor');
