@@ -13456,7 +13456,7 @@ textarea.form-control-lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #00c6a7;
+  background: linear-gradient (to left, #00c6a7, #1e4d92);
   z-index: 1030;
   padding-right: 15px;
 }
