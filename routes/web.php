@@ -7,22 +7,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/admin/principal', function () {
-//         return view('administrador.admin.principal');
-//     })->name('admin.dashboard')->middleware('role:administrador');
-    
-//     Route::get('/colaborador/principal', function () {
-//         return view('colaborador.inicio_colab.principal');
-//     })->name('colaborador.dashboard')->middleware('role:colaboradores');
-    
-//     Route::get('/instructor/principal', function () {
-//         return view('instructor.inicio.principal');
-//     })->name('instructor.dashboard') ->middleware('role:instructor');
-    
-//     // Ruta home por defecto (puedes eliminarla si no la necesitas)
-//     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// });
 
 Auth::routes();
 
