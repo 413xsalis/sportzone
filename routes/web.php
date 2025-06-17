@@ -57,10 +57,13 @@ Route::prefix('admin')->group(function() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('colaborador.inicio_colab.principal');
 });
 
+=======
+>>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
 =======
 >>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
 =======
