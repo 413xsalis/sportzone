@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColabController;
+use App\Http\Controllers\InstructorController;
 
 Route::get('/', function () {
     return view('iniciosportzone.principal');
@@ -66,4 +67,11 @@ Route::prefix('colab')->group(function() {
 
 Route::prefix('colab')->group(function() {
     Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+});
+
+
+//RUTAS DEL INSTRUCTOR
+
+Route::prefix('inst')->group(function() {
+    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
 });
