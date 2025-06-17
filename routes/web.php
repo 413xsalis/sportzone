@@ -62,3 +62,4 @@ Route::get('/', function () {
 
 =======
 >>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
+>>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
