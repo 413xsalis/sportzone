@@ -54,17 +54,3 @@ Route::prefix('admin')->group(function() {
 Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('colaborador.inicio_colab.principal');
-});
-
-=======
->>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
-=======
->>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
-=======
->>>>>>> parent of 2f0317d (actualizacion rutas gestion usuario)
