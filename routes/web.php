@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColabController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\EstudianteController;
 
 Route::get('/', function () {
     return view('iniciosportzone.principal');
@@ -75,3 +76,8 @@ Route::prefix('colab')->group(function() {
 Route::prefix('inst')->group(function() {
     Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
 });
+
+//controlador formulario inscripciones
+
+Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');

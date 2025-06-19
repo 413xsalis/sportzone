@@ -76,14 +76,52 @@
           </div>
         </div>
 
-        <div class="row">
-          <!-- Calendario -->
+        <!--<div class="row">
+          <!- Calendario -->
           <div class="col-md-6 mb-4">
             <label for="calendar" class="form-label">Selecciona una fecha:</label>
             <input type="date" class="form-control" id="calendar">
           </div>
 
-          <!-- Asistencia semanal -->
+          @extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h2>Formulario de inscripción</h2>
+
+    @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    <form action="{{ route('estudiantes.store') }}" method="POST">
+        @csrf
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input type="text" name="apellido" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="text" name="telefono" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Inscribir</button>
+    </form>
+</div>
+@endsection
+
+          <!-- Asistencia semanal ->
           <div class="col-md-6">
             <div class="card">
               <div class="card-header asistencia-header">
@@ -91,7 +129,7 @@
               </div>
               <div class="card-body" id="asistencia">
                 <p>Sin datos por ahora.</p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
