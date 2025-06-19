@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default('colaboradores');
-        });
+Schema::create('products', function (Blueprint $table) {  // Asegúrate que es 'products' y no 'product$'
+    // tus columnas aquí
+});
     }
 
     /**
@@ -21,8 +21,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
-        });
+Schema::create('products', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->text('description')->nullable();
+    $table->decimal('price', 8, 2);
+    $table->timestamps();
+});
     }
 };

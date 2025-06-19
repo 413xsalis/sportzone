@@ -1,8 +1,14 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+
+
+
+
+
 Route::get('/', function () {
-    return view('colaborador/inicio_colab/principal');
+    return view('administrador/admin/principal');
     // return view('iniciosportzone.principal');
 });
 
@@ -40,3 +46,6 @@ Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 
 });
+
+Route::resource('products', ProductController::class)
+    ->middleware(['auth', 'check.role:administrador']); // Ajusta el middleware según tus necesidades

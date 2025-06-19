@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product; // Asegúrate de importar el modelo Product
 
 class AdminController extends Controller
 {
@@ -11,15 +12,27 @@ class AdminController extends Controller
      */
     public function principal()
     {
-        return view('administrador.admin.principal'); // Asegúrate de que esta vista exista
-    }
-        public function gestion()
-    {
-        return view('administrador.Gestion_usuarios.principal'); // Asegúrate de que esta vista exista
+        return view('administrador.admin.principal');
     }
 
-            public function formulario()
+    /**
+     * Muestra la gestión de usuarios con productos
+     */
+    public function gestion()
     {
-        return view('administrador.Formulario_empleados.principal'); // Asegúrate de que esta vista exista
+        $products = Product::all(); // Obtener todos los productos
+        return view('administrador.Gestion_usuarios.principal', compact('products'));
+    }
+
+    public function formulario()
+    {
+        return view('administrador.Formulario_empleados.principal');
+    }
+
+    // Este método index parece redundante, puedes eliminarlo si no se usa
+    public function index()
+    {
+        $products = Product::all();
+        return view('administrado.Gestion_usuarios.principal', compact('products'));
     }
 }

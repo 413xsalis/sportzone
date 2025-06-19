@@ -9,37 +9,44 @@
             <h1><i class="bi"></i> Gestion usuarios</h1>
         </div>
     </div>
-              <table class="table caption-top">
-  <caption> <h1>Usuarios</h1></caption>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+           <div class="container mt-3">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Lista de Productos</h2>
+        <a href="{{ route('products.create') }}" class="btn btn-success">Crear Producto</a>
+    </div>
 
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            {{ $message }}
+        </div>
+    @endif
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th width="280px">Acciones</th>
+        </tr>
+        @foreach ($products as $product)
+        <tr>
+            <td>{{ $product->id }}</td>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->description }}</td>
+            <td>${{ number_format($product->price, 2) }}</td>
+            <td>
+                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Ver</a>
+                    <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Editar</a>
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </table>
+</div>
 
 @endsection    
