@@ -10,36 +10,36 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        return view('administrador.Gestion_usuarios.principal', compact('products'));
     }
 
     public function create()
     {
-        return view('products.create');
+        return view('administrador.Gestion_usuarios.create');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|max:255',
-            'description' => 'required',
-            'price' => 'required|numeric'
-        ]);
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'name' => 'required|max:255',
+        'description' => 'required',
+        'price' => 'required|numeric|min:0'
+    ]);
 
         Product::create($request->all());
 
-        return redirect()->route('products.index')
+        return redirect()->route('administrador.Gestion_usuarios.principal')
             ->with('success', 'Producto creado exitosamente.');
     }
 
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        return view('administrador.Gestion_usuarios.show', compact('product'));
     }
 
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        return view('administrador.Gestion_usuarios.edit', compact('product'));
     }
 
     public function update(Request $request, Product $product)
@@ -52,7 +52,7 @@ class ProductController extends Controller
 
         $product->update($request->all());
 
-        return redirect()->route('products.index')
+        return redirect()->route('administrador.Gestion_usuarios.principal')
             ->with('success', 'Producto actualizado exitosamente');
     }
 
@@ -60,7 +60,7 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->route('products.index')
+        return redirect()->route('administrador.Gestion_usuarios.principal')
             ->with('success', 'Producto eliminado exitosamente');
     }
 }

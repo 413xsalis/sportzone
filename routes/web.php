@@ -17,6 +17,10 @@ Auth::routes();
 
 Auth::routes();
 
+
+Route::resource('products', ProductController::class)
+    ->middleware(['auth', 'check.role:administrador']); 
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/principal', function () {
         return view('administrador.admin.principal');
@@ -47,5 +51,9 @@ Route::prefix('admin')->group(function() {
 
 });
 
-Route::resource('products', ProductController::class)
-    ->middleware(['auth', 'check.role:administrador']); // Ajusta el middleware según tus necesidades
+
+Route::prefix('admin')->group(function() {
+    Route::get('/create', [AdminController::class, 'create'])->name('admin.create');
+
+});
+

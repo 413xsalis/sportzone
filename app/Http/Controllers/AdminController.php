@@ -30,9 +30,9 @@ class AdminController extends Controller
     }
 
     // Este método index parece redundante, puedes eliminarlo si no se usa
-    public function index()
+
+        public function create()
     {
-        $products = Product::all();
-        return view('administrado.Gestion_usuarios.principal', compact('products'));
+        return view('administrador.Gestion_usuarios.create');
     }
 }

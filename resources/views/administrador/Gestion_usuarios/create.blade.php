@@ -1,10 +1,11 @@
-@extends('layouts.app1')
+@extends('administrador.Gestion_usuarios.layout')
 
-@section('title', 'Crear Producto')
+@section('content')
+<!-- @section('title', 'Crear Producto') -->
 
 @section('content')
 <div class="container mt-3">
-    <h2>Crear Nuevo Producto</h2>
+    <h2>Crear Nuevo  Usuario</h2>
     
     <form action="{{ route('products.store') }}" method="POST">
         @csrf
@@ -21,7 +22,7 @@
             <input type="number" step="0.01" class="form-control" id="price" name="price" required>
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancelar</a>
+        <a href="{{ route('admin.Gestion_usuarios') }}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 @endsection
