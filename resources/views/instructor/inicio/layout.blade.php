@@ -12,12 +12,34 @@
     <title>@yield('title', 'SportZone')</title>
 </head>
 <body class="app sidebar-mini">
-    @include('colaborador.inicio_colab.partials.header')
+    @include('instructor.inicio.partials.header')
+
+        @hasSection('page-header')
+        <div class="page-header bg-white border-bottom">
+            <div class="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center py-3">
+                <div>
+                    @hasSection('page-title')
+                        <h1 class="h4 mb-1">@yield('page-title')</h1>
+                    @endif
+                    @hasSection('page-subtitle')
+                        <p class="text-muted mb-0">@yield('page-subtitle')</p>
+                    @endif
+                </div>
+                @hasSection('breadcrumb')
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            @yield('breadcrumb')
+                        </ol>
+                    </nav>
+                @endif
+            </div>
+        </div>
+    @endif
     
     <div class="app-content">
         @yield('content')
     </div>
 
-    @include('colaborador.inicio_colab.partials.footer')
+    @include('instructor.inicio.partials.footer')
 </body>
 </html>
