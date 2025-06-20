@@ -71,7 +71,6 @@
     </div>
 
     <ul class="app-menu">
-      <a class="app-menu__item" href="{{ route('inst.horarios') }}"></i><span class="app-menu__label">Horarios</span></a>
       <a class="app-menu__item" href="{{ route('colab.inscripcion') }}"></i><span class="app-menu__label">Alumnos</span></a>
       <a class="app-menu__item" href="{{ route('colab.reportes') }}"></i><span
           class="app-menu__label">Reportes</span></a>

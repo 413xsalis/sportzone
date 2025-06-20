@@ -77,6 +77,10 @@ Route::prefix('inst')->group(function() {
     Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
 });
 
+Route::prefix('inst')->group(function() {
+    Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+});
+
 //controlador formulario inscripciones
 
 Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');

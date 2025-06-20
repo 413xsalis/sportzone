@@ -1,18 +1,9 @@
 @extends('instructor.inicio.layout')
 
-{{-- Sección para inyectar el título “Bienvenido” dentro del header --}}
-@section('header-content')
-<div class="app-title d-flex justify-content-between align-items-center mb-4">
-  <div>
-    <h1><i class="bi"></i> Bienvenido</h1>
-    <h5 class="mb-0">Panel de control para instructores</h5>
-  </div>
-  <ul class="app-breadcrumb breadcrumb">
-    <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-    <li class="breadcrumb-item active">Dashboard</li>
-  </ul>
-</div>
+@section('nav-message')
+  Bienvenido - Panel de control de instructores
 @endsection
+
 
 @section('content')
 
@@ -107,7 +98,7 @@
       <h5 class="mb-3">Resumen de actividades</h5>
       <div class="d-flex justify-content-between mb-2">
         <div class="text-center">
-        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+        <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center"
           style="width: 50px; height: 50px;">
           <i class="bi bi-people fs-4"></i>
         </div>
