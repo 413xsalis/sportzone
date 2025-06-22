@@ -52,15 +52,18 @@ Route::prefix('admin')->group(function() {
     Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
 });
 
+////<<<<<<< HEAD
 //<<<<<<< HEAD
 //<<<<<<< HEAD
 //<<<<<<< Updated upstream
 //Route::get('/', function () {
     //return view('colaborador.reportes.principal');
 //});
-=======
-=======
->>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//=======
+//=======
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//=======
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
 
 
 
@@ -68,69 +71,97 @@ Route::prefix('admin')->group(function() {
 
 
 
-Route::prefix('colab')->group(function() {
-    Route::get('/principal', [ColabController::class, 'principal'])->name('colab.principal');
-});
-Route::prefix('colab')->group(function() {
-    Route::get('/gestion', [ColabController::class, 'gestion'])->name('colab.gestion_clases');
-<<<<<<< HEAD
-});
+//Route::prefix('colab')->group(function() {
+ //   Route::get('/principal', [ColabController::class, 'principal'])->name('colab.principal');
+//});
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/gestion', [ColabController::class, 'gestion'])->name('colab.gestion_clases');
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+//});
 
-Route::prefix('colab')->group(function() {
-    Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
-});
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+//});
 
-Route::prefix('colab')->group(function() {
-    Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
-});
->>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+//});
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
 
 
 //RUTAS DEL INSTRUCTOR
 
-Route::prefix('inst')->group(function() {
-    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
-});
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+//});
 
-Route::prefix('inst')->group(function() {
-    Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
-});
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+//});
 
-<<<<<<< HEAD
-*/
+//<<<<<<< HEAD
+//*/
 //=======
 
 //>>>>>>> Stashed changes
-=======
+//=======
 //controlador formulario inscripciones
 
-Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
-Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
->>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
-=======
-});
+//Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+//Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//=======
+//});
 
-Route::prefix('colab')->group(function() {
-    Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
-});
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+//});
 
-Route::prefix('colab')->group(function() {
-    Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
-});
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+//});
 
 
 //RUTAS DEL INSTRUCTOR
 
-Route::prefix('inst')->group(function() {
-    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
-});
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+//});
 
-Route::prefix('inst')->group(function() {
-    Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
-});
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+//});
 
 //controlador formulario inscripciones
 
-Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
-Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
->>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+//Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+//=======
+//});
+
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+//});
+
+//Route::prefix('colab')->group(function() {
+  //  Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+//});
+
+
+//RUTAS DEL INSTRUCTOR
+
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+//});
+
+//Route::prefix('inst')->group(function() {
+  //  Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+//});
+
+//controlador formulario inscripciones
+
+//Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+//Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
