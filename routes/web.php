@@ -52,11 +52,11 @@ Route::prefix('admin')->group(function() {
     Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+//<<<<<<< HEAD
+//<<<<<<< HEAD
 //<<<<<<< Updated upstream
 //Route::get('/', function () {
-    return view('colaborador.reportes.principal');
+    //return view('colaborador.reportes.principal');
 //});
 =======
 =======
