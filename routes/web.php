@@ -15,11 +15,15 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Auth::routes();
+Route::get('/libros/crear',[ProductController::class, 'create'])->name('libros.crear');
 
 
-Route::resource('products', ProductController::class)
-    ->middleware(['auth', 'check.role:administrador']); 
+
+Route::post('/products/store',[ProductController::class, 'store'])->name('products.store');
+
+Route::post('/products/index',[ProductController::class, 'index'])->name('products.index');
+
+Route::resource('products', ProductController::class); 
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/principal', function () {

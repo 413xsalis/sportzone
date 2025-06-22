@@ -28,8 +28,10 @@ public function store(Request $request)
 
         Product::create($request->all());
 
-        return redirect()->route('administrador.Gestion_usuarios.principal')
-            ->with('success', 'Producto creado exitosamente.');
+              return redirect()->back()->with('success', 'Libro creado con exito');
+
+        // return redirect()->route('administrador.Gestion_usuarios.principal')
+        //     ->with('success', 'Producto creado exitosamente.');
     }
 
     public function show(Product $product)
@@ -39,7 +41,7 @@ public function store(Request $request)
 
     public function edit(Product $product)
     {
-        return view('administrador.Gestion_usuarios.edit', compact('product'));
+              return redirect()->back()->with('success', 'Libro creado con exito');
     }
 
     public function update(Request $request, Product $product)
@@ -60,8 +62,7 @@ public function store(Request $request)
     {
         $product->delete();
 
-        return redirect()->route('administrador.Gestion_usuarios.principal')
-            ->with('success', 'Producto eliminado exitosamente');
+              return redirect()->back()->with('success', 'Libro creado con exito');
     }
 }
 
