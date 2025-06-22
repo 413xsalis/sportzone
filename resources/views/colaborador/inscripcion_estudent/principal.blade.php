@@ -1,4 +1,4 @@
-@extends('colaborador.inscripcion_estudent.layout')
+@extends('colaborador.inscripcion_estudent.layout') 
 
 @section('content')
 <main class="app-content">
@@ -8,8 +8,8 @@
           <p> Modulo Colaborador</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-        <!--  <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> -->
+          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> 
         </ul>
       </div>
      <!-- <div class="row">
@@ -82,44 +82,74 @@
             <label for="calendar" class="form-label">Selecciona una fecha:</label>
             <input type="date" class="form-control" id="calendar">
           </div>
+          <br>
 
-          @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <h2>Formulario de inscripción</h2>
+<!-- Formulario -->
+<div class="col-md-12 mb-4">
+  <h2>Formulario de Inscripción</h2>
+  <form action="{{ route('estudiantes.store') }}" method="POST">
+    @csrf
+    <br>
+    <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="documento" class="form-label">Documento</label>
+      <input type="number" class="form-control" name="documento" id="documento" required>
+    </div>
 
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+    <div class="col-md-6 mb-3">
+      <label for="nombre_1" class="form-label">Nombre 1</label>
+      <input type="text" class="form-control" name="nombre_1" id="nombre_1" required>
+    </div>
 
-    <form action="{{ route('estudiantes.store') }}" method="POST">
-        @csrf
+    <div class="col-md-6 mb-3">
+      <label for="nombre_2" class="form-label">Nombre_2</label>
+      <input type="text" class="form-control" name="nombre_2" id="nombre_2" required>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input type="text" name="nombre" class="form-control" required>
-        </div>
+    <div class="col-md-6 mb-3">
+      <label for="apellido_1" class="form-label">Apellido_1</label>
+      <input type="text" class="form-control" name="apellido_1" id="apellido_1" required>
+    </div> 
 
-        <div class="mb-3">
-            <label class="form-label">Apellido</label>
-            <input type="text" name="apellido" class="form-control" required>
-        </div>
+    <div class="col-md-6 mb-3">
+      <label for="apellido_2" class="form-label">Apellido_2</label>
+      <input type="text" class="form-control" name="apellido_2" id="apellido_2" required>
+    </div> 
 
-        <div class="mb-3">
-            <label class="form-label">Correo electrónico</label>
-            <input type="email" name="email" class="form-control" required>
-        </div>
+    <div class="col-md-6 mb-3">
+      <label for="telefono" class="form-label">Telefono</label>
+      <input type="number" class="form-control" name="telefono" id="telefono" required>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label">Teléfono</label>
-            <input type="text" name="telefono" class="form-control">
-        </div>
+    <div class="col-md-6 mb-3">
+      <label for="nombre_contacto" class="form-label">Telefono de Contacto</label>
+      <input type="number" class="form-control" name="telefono_contacto" id="telefono_contacto" required>
+    </div>
 
-        <button type="submit" class="btn btn-primary">Inscribir</button>
-    </form>
+    <div class="col-md-6 mb-3">
+      <label for="eps" class="form-lebel">EPS</label>
+      <input type="text" class="form-control" name="eps" id="eps">
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label for="id_grupo_nivel" class="form-label">Grupo o Nivel</label>
+        <select class="form-select" id="id_grupo_nivel" name="id_grupo_nivel">
+          <option value="">Seleccione un grupo</option>
+          {{-- Aquí puedes usar un foreach si tienes datos de grupos desde el controlador --}}
+          <option value="1">Nivel 1</option>
+          <option value="2">Nivel 2</option>
+          <option value="3">Nivel 3</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+  </form>
 </div>
-@endsection
+
+
+         
 
           <!-- Asistencia semanal ->
           <div class="col-md-6">
@@ -141,4 +171,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="app.js"></script>
     </main>
-    @endsection
+    @endsection 
