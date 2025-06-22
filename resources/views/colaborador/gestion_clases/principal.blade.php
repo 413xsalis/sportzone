@@ -8,8 +8,8 @@
           <p> Modulo Colaborador</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+         <!-- <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> -->
         </ul>
       </div>
      <!-- <div class="row">
@@ -93,34 +93,35 @@
                 <p>Sin datos por ahora.</p>
               </div> -->
 
+  
               <table class="table caption-top">
-  <caption> <h1>Horario de clases</h1></caption>
+  <caption> <h1 style = "color: #348be2;">Horario de clases</h1></caption>
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col" style = "color: #348be2;">#</th>
+      <th scope="col" style = "color: #348be2;">First</th>
+      <th scope="col" style = "color: #348be2;">Last</th>
+      <th scope="col" style = "color: #348be2;">Handle</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th style = "color: #348be2;"scope="row">1</th>
+      <td style = "color: #348be2;">Mark</td>
+      <td style = "color: #348be2;">Otto</td>
+      <td style = "color: #348be2;">@mdo</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th style = "color: #348be2;"scope="row">2</th>
+      <td style = "color: #348be2;">Jacob</td>
+      <td style = "color: #348be2;">Thornton</td>
+      <td style = "color: #348be2;">@fat</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th style = "color: #348be2;"scope="row">3</th>
+      <td style = "color: #348be2;">Larry</td>
+      <td style = "color: #348be2;">the Bird</td>
+      <td style = "color: #348be2;">@twitter</td>
     </tr>
   </tbody>
 </table>
@@ -129,9 +130,9 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h1 class="titulo"> Calendario </h1>
           <div>
-            <i class="bi bi-bell mx-2"></i>
+           <!-- <i class="bi bi-bell mx-2"></i>
             <i class="bi bi-box-arrow-right mx-2"></i>
-            <i class="bi bi-person-circle"></i>
+            <i class="bi bi-person-circle"></i> -->
           </div>
         </div>
 

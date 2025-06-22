@@ -12,10 +12,11 @@
     <title>@yield('title', 'SportZone')</title>
 </head>
 <body class="app sidebar-mini">
-    @include('colaborador.inscipcion_estudent.partials.header')
+    @include('colaborador.inscripcion_estudent.partials.header')
     
     <div class="app-content">
         @yield('content')
+
     </div>
 
     @include('colaborador.inscripcion_estudent.partials.footer')

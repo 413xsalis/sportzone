@@ -12,7 +12,7 @@
     <title>@yield('title', 'SportZone')</title>
 </head>
 <body class="app sidebar-mini">
-    @include('instructor.inicio.partials.header')
+    @include('instructor.horarios.partials.header')
 
         @hasSection('page-header')
         <div class="page-header bg-white border-bottom">
@@ -40,6 +40,6 @@
         @yield('content')
     </div>
 
-    @include('instructor.inicio.partials.footer')
+    @include('instructor.horarios.partials.footer')
 </body>
 </html>

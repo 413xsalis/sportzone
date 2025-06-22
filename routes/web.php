@@ -1,14 +1,18 @@
-  <?php
+<?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ColabController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\EstudianteController;
+
 Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
 
-<<<<<<< Updated upstream
-=======
+//<<<<<<< Updated upstream
+//=======
 //Auth::routes();
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
 // Route::get('/admin/principal', [AdminController::class, 'principal'])
 //     ->name('administrador.admin.principal');
@@ -48,79 +52,85 @@ Route::prefix('admin')->group(function() {
     Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
 });
 
-<<<<<<< Updated upstream
-Route::get('/', function () {
+<<<<<<< HEAD
+<<<<<<< HEAD
+//<<<<<<< Updated upstream
+//Route::get('/', function () {
     return view('colaborador.reportes.principal');
-});
-
-
-/*
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
-
-/*
-|--------------------------------------------------------------------------
-| Rutas públicas
-|--------------------------------------------------------------------------
-*
-
-Route::get('/', function () {
-    return view('iniciosportzone.principal');
-});
-
-Auth::routes();
-
-/*
-|--------------------------------------------------------------------------
-| Rutas protegidas por auth
-|--------------------------------------------------------------------------
-*
-Route::middleware(['auth'])->group(function () {
-
-    // Dashboard por rol
-    Route::get('/admin/principal', [AdminController::class, 'principal'])->name('admin.dashboard');
-    Route::get('/colaborador/principal', function () {
-        return view('colaborador.inicio_colab.principal');
-    })->name('colaborador.dashboard');
-    Route::get('/instructor/principal', function () {
-        return view('instructor.inicio.principal');
-    })->name('instructor.dashboard');
-
-    // Ruta home por defecto
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-    /*
-    |--------------------------------------------------------------------------
-    | Rutas para administrador
-    |--------------------------------------------------------------------------
-    *
-    Route::prefix('admin')->group(function () {
-        Route::get('/gestion', [AdminController::class, 'gestion'])->name('admin.Gestion_usuarios');
-        Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
-    });
-
-    /*
-    |--------------------------------------------------------------------------
-    | Rutas para colaborador (ejemplo para header.blade.php)
-    |--------------------------------------------------------------------------
-    *
-    Route::prefix('colaborador')->group(function () {
-        Route::get('/gestion-clases', function () {
-            return view('colaborador.gestion_clases.principal');
-        })->name('colaborador.gestion_clases');
-
-        Route::get('/inscripcion-estudiantes', function () {
-            return view('colaborador.inscripcion_estudiantes.principal');
-        })->name('colaborador.inscripcion_estudiantes');
-
-        Route::get('/reportes', function () {
-            return view('colaborador.reportes.principal');
-        })->name('colaborador.reportes');
-    });
-});
-
-*/
+//});
 =======
+=======
+>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
 
->>>>>>> Stashed changes
+
+
+
+
+
+
+Route::prefix('colab')->group(function() {
+    Route::get('/principal', [ColabController::class, 'principal'])->name('colab.principal');
+});
+Route::prefix('colab')->group(function() {
+    Route::get('/gestion', [ColabController::class, 'gestion'])->name('colab.gestion_clases');
+<<<<<<< HEAD
+});
+
+Route::prefix('colab')->group(function() {
+    Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+});
+
+Route::prefix('colab')->group(function() {
+    Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+});
+>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+
+
+//RUTAS DEL INSTRUCTOR
+
+Route::prefix('inst')->group(function() {
+    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+});
+
+Route::prefix('inst')->group(function() {
+    Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+});
+
+<<<<<<< HEAD
+*/
+//=======
+
+//>>>>>>> Stashed changes
+=======
+//controlador formulario inscripciones
+
+Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
+=======
+});
+
+Route::prefix('colab')->group(function() {
+    Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+});
+
+Route::prefix('colab')->group(function() {
+    Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+});
+
+
+//RUTAS DEL INSTRUCTOR
+
+Route::prefix('inst')->group(function() {
+    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+});
+
+Route::prefix('inst')->group(function() {
+    Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
+});
+
+//controlador formulario inscripciones
+
+Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
