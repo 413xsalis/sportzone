@@ -11,8 +11,8 @@
     </div>
            <div class="container mt-3">
     <div class="d-flex justify-content-between mb-3">
-        <h2>Lista de Productos</h2>
-        <a href="{{ route('admin.create') }}" class="btn btn-success">Crear Producto</a>
+        <h2>Lista de Usuarios</h2>
+        <a href="{{ route('admin.create') }}" class="btn btn-success">Nuevo Usuario</a>
     </div>
 
     @if ($message = Session::get('success'))

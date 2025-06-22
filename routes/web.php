@@ -23,6 +23,8 @@ Route::post('/products/store',[ProductController::class, 'store'])->name('produc
 
 Route::post('/products/index',[ProductController::class, 'index'])->name('products.index');
 
+Route::post('/products/update',[ProductController::class, 'update'])->name('products.update');
+
 Route::resource('products', ProductController::class); 
 
 Route::middleware(['auth'])->group(function () {
