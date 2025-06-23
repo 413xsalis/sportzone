@@ -1,157 +1,118 @@
 @extends('colaborador.gestion_clases.layout')
 
+@section('title', 'Gestión de Clases')
+
 @section('content')
 <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-speedometer"></i> Gestion de clases </h1>
-          <p> Modulo Colaborador</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb">
-         <!-- <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li> -->
-        </ul>
-      </div>
-     <!-- <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small primary coloured-icon"><i class="icon bi bi-people fs-1"></i>
-            <div class="info">
-              <h4>Users</h4>
-              <p><b>5</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small info coloured-icon"><i class="icon bi bi-heart fs-1"></i>
-            <div class="info">
-              <h4>Likes</h4>
-              <p><b>25</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small warning coloured-icon"><i class="icon bi bi-folder2 fs-1"></i>
-            <div class="info">
-              <h4>Uploades</h4>
-              <p><b>10</b></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="widget-small danger coloured-icon"><i class="icon bi bi-star fs-1"></i>
-            <div class="info">
-              <h4>Stars</h4>
-              <p><b>500</b></p> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title"> CALENDARIO</h3>
-            <div class="ratio ratio-16x9">
-              <div id="salesChart"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title"> ASISTENCIA</h3>
-            <div class="ratio ratio-16x9">
-              <div id="supportRequestChart"></div>
-            </div>
-          </div>
-        </div>
-      </div>-->
-
-        <!-- Main content -->
-       <!-- <main class="col-md-10 main-content p-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h1 class="titulo"> Formulario de gestion de clases </h1>
-          <div>
-            <i class="bi bi-bell mx-2"></i>
-            <i class="bi bi-box-arrow-right mx-2"></i>
-            <i class="bi bi-person-circle"></i>
-          </div>
-        </div>
-
-        <div class="row">
-           Calendario 
-          <div class="col-md-6 mb-4">
-            <label for="calendar" class="form-label">Selecciona una fecha:</label>
-            <input type="date" class="form-control" id="calendar">
-          </div> 
-
-           Asistencia semanal 
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header asistencia-header">
-                Asistencia Semanal
-              </div>
-              <div class="card-body" id="asistencia">
-                <p>Sin datos por ahora.</p>
-              </div> -->
-
-  
-              <table class="table caption-top">
-  <caption> <h1 style = "color: #348be2;">Horario de clases</h1></caption>
-  <thead>
-    <tr>
-      <th scope="col" style = "color: #348be2;">#</th>
-      <th scope="col" style = "color: #348be2;">First</th>
-      <th scope="col" style = "color: #348be2;">Last</th>
-      <th scope="col" style = "color: #348be2;">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th style = "color: #348be2;"scope="row">1</th>
-      <td style = "color: #348be2;">Mark</td>
-      <td style = "color: #348be2;">Otto</td>
-      <td style = "color: #348be2;">@mdo</td>
-    </tr>
-    <tr>
-      <th style = "color: #348be2;"scope="row">2</th>
-      <td style = "color: #348be2;">Jacob</td>
-      <td style = "color: #348be2;">Thornton</td>
-      <td style = "color: #348be2;">@fat</td>
-    </tr>
-    <tr>
-      <th style = "color: #348be2;"scope="row">3</th>
-      <td style = "color: #348be2;">Larry</td>
-      <td style = "color: #348be2;">the Bird</td>
-      <td style = "color: #348be2;">@twitter</td>
-    </tr>
-  </tbody>
-</table>
-
- <main class="col-md-10 main-content p-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h1 class="titulo"> Calendario </h1>
-          <div>
-           <!-- <i class="bi bi-bell mx-2"></i>
-            <i class="bi bi-box-arrow-right mx-2"></i>
-            <i class="bi bi-person-circle"></i> -->
-          </div>
-        </div>
-
-        <div class="row">
-           Calendario 
-          <div class="col-md-6 mb-4">
-            <label for="calendar" class="form-label">Selecciona una fecha:</label>
-            <input type="date" class="form-control" id="calendar">
-          </div> 
-              
-            </div>
-          </div>
-        </div>
-      </main>
+  <div class="app-title">
+    <div>
+      <h1><i class="bi bi-speedometer"></i> Gestión de Clases </h1>
+      <p>Módulo Colaborador</p>
     </div>
   </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="app.js"></script>
-    </main>
-    @endsection
+  <div class="container mt-4">
+    <h2 class="mb-4 text-center">Horario de Clases</h2>
+
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark text-center">
+  <tr>
+    <th>Día</th>
+    <th>Hora</th>
+    <th>Instructor</th>
+    <th>Grupo</th>
+    <th>Acciones</th>
+  </tr>
+</thead>
+<tbody class="text-center">
+  @foreach ($horarios as $horario)
+    <tr>
+      <td>{{ ucfirst($horario->dia) }}</td>
+      <td>{{ $horario->hora_inicio }} - {{ $horario->hora_fin }}</td>
+      <td>{{ $horario->instructor->nombre }}</td>
+      <td>{{ $horario->grupo->nombre }}</td>
+      <td>
+        <a href="{{ route('horarios.edit', $horario->id) }}" class="btn btn-sm btn-primary">Editar</a>
+
+        <form action="{{ route('horarios.destroy', $horario->id) }}" method="POST" style="display:inline-block;">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este horario?')">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+  @endforeach
+</tbody>
+
+    </table>
+  </div>
+
+  <div class="container mt-5">
+    <h3 class="text-center">Calendario</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <label for="calendar" class="form-label">Selecciona una fecha:</label>
+        <input type="date" class="form-control" id="calendar">
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <h3 class="mb-4">Registrar Nuevo Horario</h3>
+<form action="{{ route('horarios.store') }}" method="POST" class="mb-5">
+    @csrf
+
+    <div class="row g-3">
+        <div class="col-md-3">
+            <label for="dia" class="form-label">Día</label>
+            <select name="dia" id="dia" class="form-select" required>
+                <option value="">Selecciona un día</option>
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miércoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+                <option value="sábado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label for="hora_inicio" class="form-label">Hora Inicio</label>
+            <input type="time" name="hora_inicio" id="hora_inicio" class="form-control" required>
+        </div>
+
+        <div class="col-md-2">
+            <label for="hora_fin" class="form-label">Hora Fin</label>
+            <input type="time" name="hora_fin" id="hora_fin" class="form-control" required>
+        </div>
+
+        <div class="col-md-2">
+            <label for="instructor_id" class="form-label">Instructor</label>
+            <select name="instructor_id" id="instructor_id" class="form-select" required>
+                <option value="">Selecciona</option>
+                @foreach($instructores as $instructor)
+                    <option value="{{ $instructor->id }}">{{ $instructor->nombre }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label for="grupo_id" class="form-label">Grupo</label>
+            <select name="grupo_id" id="grupo_id" class="form-select" required>
+                <option value="">Selecciona</option>
+                @foreach($grupos as $grupo)
+                    <option value="{{ $grupo->id }}">{{ $grupo->nombre }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="col-md-1 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-100">Guardar</button>
+        </div>
+    </div>
+</form>
+
+</main>
+@endsection

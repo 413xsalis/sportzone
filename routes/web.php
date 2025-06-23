@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColabController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\HorarioController;
 
 Route::get('/', function () {
     return view('iniciosportzone.principal');
@@ -111,6 +112,11 @@ Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudia
 Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
 //>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
 //=======
+Route::get('/gestion_clases/principal', [HorarioController::class, 'mostrarPrincipal'])->name('gestion_clases.principal');
+
+Route::get('/colab/horarios/crear', [HorarioController::class, 'create'])->name('horarios.create');
+Route::post('/colab/horarios', [HorarioController::class, 'store'])->name('horarios.store');
+
 
 Route::prefix('colab')->group(function() {
     Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
@@ -119,6 +125,13 @@ Route::prefix('colab')->group(function() {
 Route::prefix('colab')->group(function() {
     Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
 });
+
+//editar y eliminar en horario
+
+Route::get('/horarios/{horario}/edit', [HorarioController::class, 'edit'])->name('horarios.edit');
+Route::put('/horarios/{horario}', [HorarioController::class, 'update'])->name('horarios.update');
+Route::delete('/horarios/{horario}', [HorarioController::class, 'destroy'])->name('horarios.destroy');
+
 
 
 //RUTAS DEL INSTRUCTOR
