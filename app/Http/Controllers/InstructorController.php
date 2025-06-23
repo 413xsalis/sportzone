@@ -10,6 +10,11 @@ class InstructorController extends Controller
     {
         return view('instructor.inicio.principal');
     }
+
+    public function horarios()
+    {
+        return view('instructor.horario.principal');
+    }
 }
 
 
