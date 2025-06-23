@@ -24,4 +24,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
 
+// RUTAS DEL INSTRUCTOR
+
+Route::prefix('inst')->group(function() {
+    Route::get('/principal', [InstructorController::class, 'principal'])->name('inst.principal');
+});
 
