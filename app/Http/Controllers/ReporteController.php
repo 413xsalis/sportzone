@@ -1,3 +1,5 @@
+<?php
+
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 

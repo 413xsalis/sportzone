@@ -10,13 +10,6 @@ Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
 
-//<<<<<<< Updated upstream
-//=======
-//Auth::routes();
-//>>>>>>> Stashed changes
-
-// Route::get('/admin/principal', [AdminController::class, 'principal'])
-//     ->name('administrador.admin.principal');
 
 Auth::routes();
 
@@ -82,6 +75,7 @@ Route::prefix('colab')->group(function() {
 
 Route::prefix('colab')->group(function() {
     Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+
 });
 
 Route::prefix('colab')->group(function() {
@@ -100,13 +94,6 @@ Route::prefix('inst')->group(function() {
     Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
 });
 
-//<<<<<<< HEAD
-//*/
-//=======
-
-//>>>>>>> Stashed changes
-//=======
-//controlador formulario inscripciones
 
 Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
 Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
@@ -118,8 +105,15 @@ Route::get('/colab/horarios/crear', [HorarioController::class, 'create'])->name(
 Route::post('/colab/horarios', [HorarioController::class, 'store'])->name('horarios.store');
 
 
+
 Route::prefix('colab')->group(function() {
-    Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+   Route::get('/inscripcion', [ColabController::class, 'inscripcion'])->name('colab.inscripcion');
+   Route::get('/inscripcion/listado', [EstudianteController::class, 'listado'])->name('colab.inscripcion.listado');
+   Route::get('/reportes', [ColabController::class, 'reportes'])->name('colab.reportes');
+   Route::get('/estudiantes/{id}/edit', [EstudianteController::class, 'edit'])->name('estudiantes.edit');
+   Route::put('/estudiantes/{id}', [EstudianteController::class, 'update'])->name('estudiantes.update');
+   Route::delete('/estudiantes/{id}', [EstudianteController::class, 'destroy'])->name('estudiantes.destroy');
+
 });
 
 Route::prefix('colab')->group(function() {
@@ -131,6 +125,9 @@ Route::prefix('colab')->group(function() {
 Route::get('/horarios/{horario}/edit', [HorarioController::class, 'edit'])->name('horarios.edit');
 Route::put('/horarios/{horario}', [HorarioController::class, 'update'])->name('horarios.update');
 Route::delete('/horarios/{horario}', [HorarioController::class, 'destroy'])->name('horarios.destroy');
+
+//listado de inscritos
+
 
 
 

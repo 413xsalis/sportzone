@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Estudiante;
+
 use Illuminate\Http\Request;
+use App\Models\Estudiante;
+
 
 class EstudianteController extends Controller
 {
@@ -26,8 +28,51 @@ class EstudianteController extends Controller
             'id_grupo_nivel'     => 'nullable|integer',
         ]);
 
-        Estudiante::create($request->all());
+        Estudiante::create($request->only([
+        'documento', 'nombre_1', 'nombre_2', 'apellido_1', 'apellido_2',
+        'telefono', 'nombre_contacto', 'telefono_contacto', 'eps', 'id_grupo_nivel'
+        ]));
+
+
+        //Estudiante::create($request->all());
 
         return redirect()->back()->with('success', 'Estudiante inscrito correctamente.');
     }
+
+    public function index()
+{
+    $estudiantes = \App\Models\Estudiante::all(); // Puedes usar paginación también
+    return view('colaborador.inscripcion_estudent.index', compact('estudiantes'));
+}
+
+    public function listado()
+{
+    $estudiantes = Estudiante::all();
+    return view('colaborador.inscripcion_estudent.listado', compact('estudiantes'));
+}
+
+public function edit($id)
+{
+    $estudiante = Estudiante::findOrFail($id);
+    return view('colaborador.inscripcion_estudent.edit', compact('estudiante'));
+}
+
+public function update(Request $request, $id)
+{
+    $estudiante = Estudiante::findOrFail($id);
+    $estudiante->update($request->all());
+
+    return redirect()->route('colab.inscripcion.listado')->with('success', 'Estudiante actualizado correctamente.');
+}
+
+public function destroy($id)
+{
+    $estudiante = Estudiante::findOrFail($id);
+    $estudiante->delete();
+
+    return redirect()->back()->with('success', 'Estudiante eliminado correctamente.');
+}
+
+
+
 }

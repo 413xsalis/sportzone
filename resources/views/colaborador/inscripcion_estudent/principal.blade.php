@@ -146,6 +146,13 @@
 
     <button type="submit" class="btn btn-success">Registrar</button>
   </form>
+
+  <br>
+  <a href="{{ route('colab.inscripcion.listado') }}" class="btn btn-primary mb-4"
+  style="font-size: 20px">
+    Ver Lista de Inscritos
+  </a>
+
 </div>
 
 

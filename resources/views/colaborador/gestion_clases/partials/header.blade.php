@@ -82,13 +82,16 @@
 
         </div>
       </div>
+         
+
       <ul class="app-menu">
         <a class="app-menu__item" href="#"></i><span
             class="app-menu__label">Gestion de clases</span></a>
         <a class="app-menu__item" href="{{ route('colab.inscripcion') }}"></i><span
-            class="app-menu__label">Inscripcíon de Estudiantes</span></a>
+            class="app-menu__label">Inscripcíon de Estudiantes</span>
         <a class="app-menu__item" href="{{ route('colab.reportes') }}"></i><span
             class="app-menu__label">Reportes</span></a>
+      </ul>
 
     </aside>
 
