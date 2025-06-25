@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    /**
-     * Muestra la vista principal del administrador
-     */
+public function index(){
+    return "DASHBOARD -> admin";
+}
+
+public function create(){
+
+}
+
+
     public function principal()
     {
         return view('administrador.admin.principal'); // Asegúrate de que esta vista exista

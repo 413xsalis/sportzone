@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LibrosController;
 
 Route::get('/', function () {
-    return view('iniciosportzone.principal');
+    return view('register');
 });
 
 // Route::get('/admin/principal', [AdminController::class, 'principal'])
@@ -24,3 +24,8 @@ Route::prefix('admin')->group(function() {
 
 Route::get('/libros/crear',[LibrosController::class, 'crear'])->name('libros.crear');
 Route::post('/libros/store',[LibrosController::class, 'store'])->name('libros.store');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController1::class, 'index'])->name('home');
+
+route::resource('admin/dashboard', AdminController::class)->middleware(['auth','role:admin']);
