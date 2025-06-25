@@ -1,4 +1,5 @@
-extends('instructor.horarios.layout')
+@extends('instructor.horario.layout')
+
 
 @section('nav-message')
 Bienvenido - Panel de control de instructores
