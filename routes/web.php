@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\InstructorController;
+
 
 Route::get('/', function () {
     return view('iniciosportzone.principal');
@@ -35,5 +37,8 @@ Route::prefix('inst')->group(function() {
 
 Route::prefix('inst')->group(function() {
     Route::get('/asistencia', [InstructorController::class, 'asistencia'])->name('inst.asistencia');
+    Route::post('/asistencia/guardar', [AsistenciaController::class, 'guardar'])->name('asistencia.guardar');
 });
+
+
 
