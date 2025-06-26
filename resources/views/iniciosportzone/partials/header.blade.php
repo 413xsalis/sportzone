@@ -126,7 +126,7 @@
                     <a class="nav-link text-custom-green" href="#contactos">Contactos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-custom-green" href="{{ route('colab.principal') }}">colaborador</a>
+                        <a class="nav-link text-custom-green" href="{{ route('inst.principal') }}">colaborador</a>
                     </li>
                 </ul>
 
