@@ -206,7 +206,7 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: #348be2;
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
@@ -356,7 +356,7 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: #ffffff;
   text-decoration: underline;
 }
 a:hover {
@@ -2375,10 +2375,10 @@ progress {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
+  color: #348be2;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -5243,7 +5243,7 @@ textarea.form-control-lg {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
-  color: var(--bs-breadcrumb-divider-color);
+  color: #ffffff;
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
@@ -13405,7 +13405,7 @@ textarea.form-control-lg {
   min-height: calc(100vh - 50px);
   margin-top: 50px;
   padding: 30px;
-  background-color: #E5E5E5;
+  background-color: #fafffe;
   -webkit-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
 }
@@ -13456,7 +13456,7 @@ textarea.form-control-lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #00695C;
+  background:linear-gradient(to left, #00c6a7, #1e4d92, #00c6a7);
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13491,7 +13491,7 @@ textarea.form-control-lg {
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #005046;
+    background: #00c6a7;
   }
 }
 .app-header__logo:focus, .app-header__logo:hover {
@@ -13678,7 +13678,7 @@ textarea.form-control-lg {
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #222d32;
+  background:linear-gradient(to top, #00c6a7, #1e4d92, #00c6a7);
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease, width 0.3s ease;
@@ -13987,7 +13987,7 @@ textarea.form-control-lg {
 }
 .app-title h1, .app-title .h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 400;
 }
 .app-title p {
