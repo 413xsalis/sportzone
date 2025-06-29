@@ -73,16 +73,25 @@
 <div class="container mt-4">
     <h3>Listado de Instructores Registrados</h3>
 
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
+
     @if($instructores->isEmpty())
         <p>No hay instructores registrados todavía.</p>
     @else
-    <table class="table table-bordered table-striped">
+
+    <table class="table table-hover table-bordered text-center shadow-sm">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Documento</th>
-                <th>Teléfono</th>
-                <th>Especialidad</th>
+              <th><i class="bi bi-person-fill"></i> Nombre</th>
+              <th><i class="bi bi-card-text"></i> Documento</th>
+              <th><i class="bi bi-telephone-fill"></i> Teléfono</th>
+              <th>Especialidad</th>
+              <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -92,6 +101,20 @@
                 <td>{{ $instructor->documento }}</td>
                 <td>{{ $instructor->telefono }}</td>
                 <td>{{ $instructor->especialidad }}</td>
+                <td>
+                {{-- Botón Editar --}}
+            <a href="{{ route('instructores.edit', $instructor->id) }}" class="btn btn-sm btn-warning">
+              <i class="bi bi-pencil-square"></i> Editar
+              </a>
+                {{-- Botón Eliminar --}}
+                <form action="{{ route('instructores.destroy', $instructor->id) }}" method="POST" class="d-inline">
+              @csrf
+            @method('DELETE')
+            <button class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este instructor?')">
+              <i class="bi bi-trash"></i> Eliminar
+                    </button>
+                </form>
+            </td>
             </tr>
             @endforeach
         </tbody>

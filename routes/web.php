@@ -92,7 +92,7 @@ Route::prefix('inst')->group(function() {
 Route::post('/colaboradores/instructores', [InstructorController::class, 'store'])->name('instructores.store');
 Route::get('/colaboradores/instructores', [InstructorController::class, 'index'])->name('instructores.index');
 Route::get('/colaboradores/inicio', [ColabController::class, 'principal'])->name('colaboradores.inicio');
-
+Route::resource('instructores', InstructorController::class);
 
 Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
 Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');

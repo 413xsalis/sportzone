@@ -36,4 +36,19 @@ public function index()
     return view('colaborador.inicio_colab.principal', compact('instructores'));
 }
 
+public function edit($id)
+{
+    $instructor = Instructor::findOrFail($id);
+    return view('colaborador.inicio_colab.editar', compact('instructor'));
+}
+
+public function destroy($id)
+{
+    $instructor = Instructor::findOrFail($id);
+    $instructor->delete();
+
+    return redirect()->back()->with('success', 'Instructor eliminado correctamente.');
+}
+
+
 }
