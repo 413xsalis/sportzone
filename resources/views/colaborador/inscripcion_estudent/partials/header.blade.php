@@ -90,7 +90,7 @@
             class="app-menu__label">Inscripcíon de Estudiantes</span></a>
         <a class="app-menu__item" href="{{ route('colab.reportes') }}"></i><span
             class="app-menu__label">Reportes</span></a>
-
+            
     </aside>
 
  

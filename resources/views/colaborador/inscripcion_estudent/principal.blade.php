@@ -146,17 +146,83 @@
 
     <button type="submit" class="btn btn-success">Registrar</button>
   </form>
-
   <br>
-  <a href="{{ route('colab.inscripcion.listado') }}" class="btn btn-primary mb-4"
-  style="font-size: 20px">
-    Ver Lista de Inscritos
-  </a>
+</div>
+      <!-- Lista de estudiantes inscritos desplegable -->
+  <div class="tile">
+  <h2>
+    <button id="toggleListaBtn"
+       class="btn btn-secondary"
+       type="button"
+       data-bs-toggle="collapse"
+       data-bs-target="#listadoEstudiantes"
+       aria-expanded="false"
+       aria-controls="listadoEstudiantes">
+       Ver Lista de Estudiantes Inscritos
+    </button>
+  </h2>
 
+  <div class="collapse fade" id="listadoEstudiantes">
+    <div class="table-responsive mt-3">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>EPS</th>
+            <th>Grupo/Nivel</th>
+          </tr>
+        </thead>
+        <tbody>
+          @forelse ($estudiantes as $est)
+            <tr>
+              <td>{{ $est->id }}</td>
+              <td>{{ $est->documento }}</td>
+              <td>{{ $est->nombre_1 }} {{ $est->apellido_1 }}</td>
+              <td>{{ $est->telefono }}</td>
+              <td>{{ $est->eps }}</td>
+              <td>{{ $est->id_grupo_nivel }}</td>
+            </tr>
+          @empty
+            <tr>
+              <td colspan="6" class="text-center">No hay estudiantes registrados.</td>
+            </tr>
+          @endforelse
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
+<style>
+  .fade.collapse:not(.show) {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .fade.collapse.show {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+</style>
 
-         
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('toggleListaBtn');
+    const collapse = document.getElementById('listadoEstudiantes');
+
+    collapse.addEventListener('show.bs.collapse', function () {
+      btn.textContent = 'Ocultar Lista de Estudiantes Inscritos';
+    });
+
+    collapse.addEventListener('hide.bs.collapse', function () {
+      btn.textContent = 'Ver Lista de Estudiantes Inscritos';
+    });
+  });
+</script>
+
+   
 
           <!-- Asistencia semanal ->
           <div class="col-md-6">

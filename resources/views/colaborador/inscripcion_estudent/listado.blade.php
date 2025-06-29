@@ -14,12 +14,13 @@
       <table class="table table-striped table-hover">
         <thead class="table-dark">
           <tr>
-            <th>ID</th>
+            <th></th>
             <th>Documento</th>
             <th>Nombre completo</th>
             <th>Teléfono</th>
             <th>EPS</th>
             <th>Grupo/Nivel</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -31,22 +32,11 @@
             <td>{{ $est->telefono }}</td>
             <td>{{ $est->eps }}</td>
             <td>{{ $est->id_grupo_nivel }}</td>
-            <td>
-          <!-- Botón Editar -->
-          <a href="{{ route('$est.edit', $est->id) }}" class="btn btn-sm btn-warning">Editar</a>
-
-          <!-- Botón Eliminar -->
-          <form action="{{ route('$est.destroy', $est->id) }}" method="POST" style="display:inline-block;">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este estudiante?')">Eliminar</button>
-          </form>
-        </td>
-          </tr>
-          
+           
+            </tr>
           @empty
           <tr>
-            <td colspan="6" class="text-center">No hay estudiantes registrados.</td>
+            <td colspan="7" class="text-center">No hay estudiantes registrados.</td>
           </tr>
           @endforelse
         </tbody>

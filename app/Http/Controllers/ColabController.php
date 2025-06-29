@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Horario;     // Modelo de horario
 use App\Models\Instructor;  // Modelo de instructor
 use App\Models\Grupo;       // Modelo de grupo
+use App\Models\Estudiante;
 
 class ColabController extends Controller
 {
@@ -27,7 +28,8 @@ class ColabController extends Controller
 
     public function inscripcion()
     {
-        return view('colaborador.inscripcion_estudent.principal');
+        $estudiantes = Estudiante::all();
+        return view('colaborador.inscripcion_estudent.principal', compact('estudiantes'));
     }
 
     public function reportes()

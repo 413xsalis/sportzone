@@ -35,8 +35,11 @@ class EstudianteController extends Controller
 
 
         //Estudiante::create($request->all());
+return redirect()->back()->with([
+    'success' => 'Estudiante inscrito correctamente.',
+    'mostrar_lista' => true
+]);
 
-        return redirect()->back()->with('success', 'Estudiante inscrito correctamente.');
     }
 
     public function index()
@@ -54,7 +57,7 @@ class EstudianteController extends Controller
 public function edit($id)
 {
     $estudiante = Estudiante::findOrFail($id);
-    return view('colaborador.inscripcion_estudent.edit', compact('estudiante'));
+    return view('inscripcion_estudent.edit', compact('estudiante'));
 }
 
 public function update(Request $request, $id)
