@@ -10,7 +10,7 @@ class Estudiante extends Model
     protected $table = 'estudiantes';
     protected $primaryKey = 'documento';
     public $incrementing = false;
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'documento',

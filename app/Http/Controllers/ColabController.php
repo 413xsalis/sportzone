@@ -11,8 +11,11 @@ use App\Models\Estudiante;
 class ColabController extends Controller
 {
     public function principal()
+    
     {
-        return view('colaborador.inicio_colab.principal');
+
+    $instructores = \App\Models\Instructor::all();
+    return view('colaborador.inicio_colab.principal', compact('instructores'));
     }
 
     public function gestion()

@@ -5,6 +5,7 @@ use App\Http\Controllers\ColabController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ReporteController;
 
 Route::get('/', function () {
     return view('iniciosportzone.principal');
@@ -42,9 +43,11 @@ Route::prefix('admin')->group(function() {
     Route::get('/formulario', [AdminController::class, 'formulario'])->name('admin.Formulario_empleados');
 });
 
-Route::prefix('admin')->group(function() {
-    Route::get('/reportes/generar', [ReporteController::class, 'generarDesdeFormulario'])->name('reportes.generar');
-});
+  //reportes
+
+//Route::middleware(['auth'])->group(function () {
+    Route::get('/reportes/inscripciones', [ReporteController::class, 'reporteInscripciones'])->name('reportes.inscripciones');
+//});
 
 //<<<<<<< HEAD
 //<<<<<<< HEAD
@@ -52,14 +55,6 @@ Route::prefix('admin')->group(function() {
 Route::get('/', function () {
    return view('colaborador.reportes.principal');
 });
-//=======
-//=======
-//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
-//=======
-//>>>>>>> a664ae12ace56ecd4a2473d06be8c7e0962066cb
-
-
-
 
 
 
@@ -93,6 +88,10 @@ Route::prefix('inst')->group(function() {
 Route::prefix('inst')->group(function() {
     Route::get('/horario', [InstructorController::class, 'horario'])->name('inst.horarios');
 });
+
+Route::post('/colaboradores/instructores', [InstructorController::class, 'store'])->name('instructores.store');
+Route::get('/colaboradores/instructores', [InstructorController::class, 'index'])->name('instructores.index');
+Route::get('/colaboradores/inicio', [ColabController::class, 'principal'])->name('colaboradores.inicio');
 
 
 Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');

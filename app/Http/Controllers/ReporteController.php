@@ -1,18 +1,32 @@
 <?php
 
-use Barryvdh\DomPDF\Facade\Pdf;
+// app/Http/Controllers/ReporteController.php
+
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+use App\Models\Estudiante;
+use Barryvdh\DomPDF\Facade\Pdf;
 
-public function generarDesdeFormulario(Request $request)
+class ReporteController extends Controller
 {
-    $fechaInicio = $request->input('fecha_inicio');
-    $fechaFin = $request->input('fecha_fin');
+    public function reporteInscripciones(Request $request)
+    {
+        $fechaInicio = $request->fecha_inicio;
+        $fechaFin = $request->fecha_fin;
 
-    // Supongamos que tienes una tabla "clases"
-    $datos = \App\Models\Clase::whereBetween('fecha', [$fechaInicio, $fechaFin])->get();
+        $estudiantes = Estudiante::whereBetween('created_at', [$fechaInicio, $fechaFin])->get();
 
-    $pdf = Pdf::loadView('reportes.pdf', compact('datos', 'fechaInicio', 'fechaFin'));
+        $pdf = Pdf::loadView('colaborador.reportes.pdf', compact('estudiantes', 'fechaInicio', 'fechaFin'));
 
-    return $pdf->download('reporte_clases.pdf');
+        //return response($pdf->output(), 200)
+            //->header('Content-Type', 'application/pdf')
+            //->header('Content-Disposition', 'inline; filename="reporte_inscripciones.pdf"');
+
+        // ⬇️ Mostrar en navegador en vez de descargar
+        return $pdf->stream('reporte_inscripciones.pdf');
+    }
 }
+
+
 
