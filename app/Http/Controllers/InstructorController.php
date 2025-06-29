@@ -42,6 +42,21 @@ public function edit($id)
     return view('colaborador.inicio_colab.editar', compact('instructor'));
 }
 
+ public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'documento' => 'required|string|max:25',
+            'telefono' => 'nullable|string|max:20',
+            'especialidad' => 'nullable|string|max:255',
+        ]);
+
+        $instructor = Instructor::findOrFail($id);
+        $instructor->update($request->all());
+
+        return redirect()->route('colaborador.inicio')->with('success', 'Instructor actualizado correctamente.');
+    }
+
 public function destroy($id)
 {
     $instructor = Instructor::findOrFail($id);
