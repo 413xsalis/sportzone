@@ -70,7 +70,7 @@ protected function create(array $data)
     ]);
     
     // Asignar rol al usuario
-    $user->assignRole($data['role']);
+    $user->assignRole(['admin']);
     
     return $user;
 }

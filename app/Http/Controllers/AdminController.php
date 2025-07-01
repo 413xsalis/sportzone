@@ -22,4 +22,8 @@ class AdminController extends Controller
     {
         return view('administrador.Formulario_empleados.principal'); // Asegúrate de que esta vista exista
     }
+
+    public function index(){
+        return view("administrador.admin.principal");
+    }
 }

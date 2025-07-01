@@ -87,7 +87,7 @@
         <div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="app-sidebar__user-designation breadcrumb-item"><a href="{{ route('admin.principal') }}">Inicio</a></li>
+          <li class="app-sidebar__user-designation breadcrumb-item"><a href="{{ route('administrador.admin.princpal') }}">Inicio</a></li>
 
         </div>
       </div>

@@ -59,11 +59,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Ruta pública
 Route::get('/', function () {
     return view('iniciosportzone.principal');
 });
+
+Route::resource('admin/dashboard', AdminController::class)
+->middleware(['auth','role:admin']);
+
+Route::resource('colaborador/dashboard', ColaboradorController::class)
+->middleware(['auth','role:colaborador']);
+
+Route::resource('instructor/dashboard', InstructorController::class)
+->middleware(['auth','role:instructor']);
+
 
 // Rutas de autenticación
 Auth::routes();
@@ -74,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     
     // Dashboard de administrador (protegido por rol)
-    Route::middleware(['role:administrador'])->group(function () {
+    Route::middleware(['role:admin'])->group(function () {
         Route::prefix('admin')->group(function() {
             Route::get('/principal', function () {
                 return view('administrador.admin.principal');

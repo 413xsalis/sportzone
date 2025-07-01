@@ -26,4 +26,18 @@ class HomeController extends Controller
         
         return back()->with('success', 'Mensaje enviado correctamente');
     }
+     public function inicio()
+    {
+        $user = \Auth::user();
+        if($user->hasRole('admin')){
+           return redirect('admin/dashboard');
+        }elseif($user->hasRole('colaborador')){
+            return redirect('colaborador/dashboard');
+        }elseif($user->hasRole('instructor')){
+            return redirect('colaborador/dashboard');
+        }
+        return redirect('/');
+        //return view('home');
+    }
+
 }
