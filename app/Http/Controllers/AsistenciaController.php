@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Grupo;
 use Illuminate\Http\Request;
 
 class AsistenciaController extends Controller
@@ -32,5 +33,19 @@ class AsistenciaController extends Controller
         }
 
         return redirect()->back()->with('success', 'Asistencia guardada correctamente.');
+    }
+
+    public function seleccionarGrupo()
+    {
+        $grupos = Grupo::all();
+        return view('instructor.asistencia.principal', compact('grupos'));
+    }
+
+    public function tomarAsistencia($id)
+    {
+        $grupo = \App\Models\Grupo::where('nombre', $nombre)->firstOrFail();
+        $estudiantes = \App\Models\Estudiante::where('id_grupo', $nombre)->get(); 
+        
+        return view('instructor.asistencia.principal', compact('grupo', 'estudiantes'));
     }
 }

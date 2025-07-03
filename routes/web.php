@@ -36,7 +36,8 @@ Route::prefix('inst')->group(function() {
 });
 
 Route::prefix('inst')->group(function() {
-    Route::get('/asistencia', [InstructorController::class, 'asistencia'])->name('inst.asistencia');
+    Route::get('/asistencia', [AsistenciaController::class, 'seleccionarGrupo'])->name('inst.asistencia');
+    Route::get('/asistencia/grupo/{nombre}', [AsistenciaController::class, 'tomarAsistencia'])->name('asistencia.tomar');
     Route::post('/asistencia/guardar', [AsistenciaController::class, 'guardar'])->name('asistencia.guardar');
 });
 
