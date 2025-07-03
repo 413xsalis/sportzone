@@ -23,7 +23,7 @@
           <button class="app-search__button"><i class="bi bi-search"></i></button>
         </li>
         <!--Notification Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+        <!--<li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a> -->
           <ul class="app-notification dropdown-menu dropdown-menu-right">
             <li class="app-notification__title">You have 4 new notifications.</li>
             <div class="app-notification__content">
@@ -61,12 +61,12 @@
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-        <!-- User Menu-->
+        <!-- User Menu--
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i class="bi bi-person fs-4"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a></li> -->
           </ul>
         </li>
       </ul> 
@@ -78,7 +78,7 @@
    <div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="app-sidebar__user-designation breadcrumb-item"><a href="{{ route('colab.principal') }}">Inicio</a></li>
+          <li class="app-sidebar__user-designation breadcrumb-item"><a href="{{ route('colab.principal') }}">Inicio</a></li> 
 
         </div>
       </div>

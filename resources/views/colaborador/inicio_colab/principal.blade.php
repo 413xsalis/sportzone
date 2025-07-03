@@ -45,7 +45,7 @@
       @csrf
 
       <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre:</label>
+        <label for="nombre" class="form-label">Nombres y Apellidos:</label>
         <input type="text" name="nombre" id="nombre" class="form-control" required>
       </div>
 

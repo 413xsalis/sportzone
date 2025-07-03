@@ -8,7 +8,7 @@
           <p> Modulo Colaborador</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+         <!-- <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li> -->
           <li class="breadcrumb-item"><a href="#">Dashboard</a></li> 
         </ul>
       </div>
