@@ -8,14 +8,19 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
-    return view('administrador/admin/principal');
+    return view('welcome');
     // return view('iniciosportzone.principal');
 });
 
 Auth::routes();
 
 
+
+
+
 Route::get('/libros/crear',[ProductController::class, 'create'])->name('libros.crear');
+
+
 
 
 
@@ -43,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
+
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/principal', [AdminController::class, 'principal'])->name('admin.principal');

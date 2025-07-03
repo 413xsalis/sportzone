@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/administrador/admin/principal';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -61,13 +61,21 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-protected function create(array $data)
-{
-    return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password']),
-        'role' => 'colaborador' // Rol por defecto o añade campo en formulario
-    ]);
-}
+
+
+    protected function create(array $data)
+    {
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        // Asignar el rol de 'admin' al primer usuario registrado
+        // Para los siguientes usuarios, cambiar a 'editor'
+        $user->assignRole('editor'); // O 'editor' para usuarios posteriores
+
+        return $user;
+    }
+
 }
