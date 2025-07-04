@@ -38,14 +38,27 @@ class AsistenciaController extends Controller
     public function seleccionarGrupo()
     {
         $grupos = Grupo::all();
+
+        if ($grupos->isEmpty()) {
+            return view('instructor.asistencia.principal', [
+                'grupos' => $grupos,
+                'error' => 'No hay grupos disponibles',
+            ]);
+        }
+
         return view('instructor.asistencia.principal', compact('grupos'));
     }
 
-    public function tomarAsistencia($id)
+
+    public function tomarAsistencia($nombre)
     {
         $grupo = \App\Models\Grupo::where('nombre', $nombre)->firstOrFail();
-        $estudiantes = \App\Models\Estudiante::where('id_grupo', $nombre)->get(); 
-        
-        return view('instructor.asistencia.principal', compact('grupo', 'estudiantes'));
+
+        $grupoNivel = \App\Models\GrupoNivel::where('id_grupo_nivel', $grupo->id_grupo_nivel)->firstOrFail();
+
+        // Traer estudiantes cuyo documento coincida con el del grupo (según tu estructura)
+        $estudiantes = \App\Models\Estudiante::where('documento', $grupo->documento)->get();
+
+        return view('instructor.asistencia.tomar', compact('grupo', 'grupoNivel', 'estudiantes')); //colocar la S en grupo --- PENDIENTE
     }
 }

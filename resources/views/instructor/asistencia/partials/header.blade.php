@@ -25,7 +25,7 @@
       <a class="app-sidebar__toggle me-3" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       @hasSection('nav-message')
       <span class="text-white fw-bold fs-5 mb-0">@yield('nav-message')</span>
-      @endif
+    @endif
     </div>
 
     <!-- Navbar Right Menu-->
@@ -33,27 +33,6 @@
       <li class="app-search">
         <input class="app-search__input" type="search" placeholder="Search">
         <button class="app-search__button"><i class="bi bi-search"></i></button>
-      </li>
-      <!--Notification Menu-->
-      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
-          aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
-        <ul class="app-notification dropdown-menu dropdown-menu-right">
-          <li class="app-notification__title">You have 4 new notifications.</li>
-          <div class="app-notification__content">
-            <!-- Notificaciones aquí... -->
-          </div>
-          <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
-        </ul>
-      </li>
-      <!-- User Menu-->
-      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i
-            class="bi bi-person fs-4"></i></a>
-        <ul class="dropdown-menu settings-menu dropdown-menu-right">
-          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
-          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
-          <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a>
-          </li>
-        </ul>
       </li>
     </ul>
   </header>
@@ -73,10 +52,11 @@
     <ul class="app-menu">
       <a class="app-menu__item" href="{{ route('inst.principal') }}"></i><span class="app-menu__label">Inicio</span></a>
 
-          <ul class="app-menu">
-      <a class="app-menu__item" href="{{ route('inst.horarios') }}"></i><span class="app-menu__label">Horarios</span></a>
+      <ul class="app-menu">
+        <a class="app-menu__item" href="{{ route('inst.horarios') }}"></i><span
+            class="app-menu__label">Horarios</span></a>
 
 
-    </ul>
+      </ul>
 
   </aside>

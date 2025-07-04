@@ -2,24 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Estudiante extends Model
 {
-    protected $table = 'estudiantes'; // o el nombre correcto de tu tabla
+    protected $table = 'estudiantes';
     protected $primaryKey = 'documento';
     public $timestamps = false;
 
+    // Relación con grupo_nivel
+    public function grupoNivel()
+    {
+        return $this->belongsTo(GrupoNivel::class, 'id_grupo_nivel', 'id_grupo_nivel');
+    }
+
+    // Relación con grupo (por campo documento)
     public function grupo()
     {
-        return $this->belongsTo(Grupo::class, 'id_grupo', 'id_grupo');
+        return $this->hasOne(Grupo::class, 'documento', 'documento');
     }
 }
-
-
 
