@@ -9,16 +9,22 @@ class AsistenciaController extends Controller
 {
     public function guardar(Request $request)
     {
+        // Validación
         $request->validate([
             'fecha' => 'required|date',
-            'id_grupo' => 'required|exists:grupos,id',
+            'nombre_grupo' => 'required|exists:grupos,nombre',
             'asistencia' => 'required|array',
         ]);
 
+        // Extraer datos del request
         $fecha = $request->input('fecha');
-        $grupo = $request->input('id_grupo');
+        $nombreGrupo = $request->input('nombre_grupo');
         $asistencias = $request->input('asistencia');
 
+        // Obtener el grupo por su nombre
+        $grupo = \App\Models\Grupo::where('nombre', $nombreGrupo)->firstOrFail();
+
+        // Guardar o actualizar asistencia
         foreach ($asistencias as $documento => $estado) {
             \App\Models\Asistencia::updateOrCreate(
                 [
@@ -26,7 +32,7 @@ class AsistenciaController extends Controller
                     'documento_estudiante' => $documento,
                 ],
                 [
-                    'id_grupo' => $grupo,
+                    'id_grupo' => $grupo->nombre,  // Si `nombre` es la PK
                     'estado' => $estado,
                 ]
             );
@@ -34,6 +40,7 @@ class AsistenciaController extends Controller
 
         return redirect()->back()->with('success', 'Asistencia guardada correctamente.');
     }
+
 
     public function seleccionarGrupo()
     {
