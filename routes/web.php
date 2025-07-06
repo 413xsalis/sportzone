@@ -62,11 +62,18 @@ Route::post('/colab/horarios', [HorarioController::class, 'store'])->name('horar
 Route::get('/horarios/{horario}/edit', [HorarioController::class, 'edit'])->name('horarios.edit');
 Route::put('/horarios/{horario}', [HorarioController::class, 'update'])->name('horarios.update');
 Route::delete('/horarios/{horario}', [HorarioController::class, 'destroy'])->name('horarios.destroy');
+Route::get('/horarios/{id}/edit', [HorarioController::class, 'edit'])->name('horarios.edit');
+Route::put('/horarios/{id}', [HorarioController::class, 'update'])->name('horarios.update');
 
 // ================= ESTUDIANTES =================
-Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
-Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
-Route::get('/colab/estudiantes/{id}/edit', [EstudianteController::class, 'edit'])->name('estudiantes.edit');
+//Route::get('/inscribir', [EstudianteController::class, 'create'])->name('estudiantes.create');
+//Route::post('/inscribir', [EstudianteController::class, 'store'])->name('estudiantes.store');
+//Route::get('/colab/estudiante/{id}/edit', [EstudianteController::class, 'edit'])->name('colab.estudiantes.edit');
+Route::get('/inscripcion_estudiante', [EstudianteController::class, 'index'])->name('estudiantes.index');
+Route::post('/inscripcion_estudiante', [EstudianteController::class, 'store'])->name('estudiantes.store');
+Route::get('/inscripcion_estudiante/{id}/edit', [EstudianteController::class, 'edit'])->name('estudiantes.edit');
+Route::put('/inscripcion_estudiante/{id}', [EstudianteController::class, 'update'])->name('estudiantes.update');
+Route::delete('/inscripcion_estudiante/{id}', [EstudianteController::class, 'destroy'])->name('estudiantes.destroy');
 
 // ================= REPORTES =================
 Route::get('/reportes/inscripciones', [ReporteController::class, 'reporteInscripciones'])->name('reportes.inscripciones');

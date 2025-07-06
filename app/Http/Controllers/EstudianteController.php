@@ -57,7 +57,7 @@ return redirect()->back()->with([
 public function edit($id)
 {
     $estudiante = Estudiante::findOrFail($id);
-    return view('inscripcion_estudent.edit', compact('estudiante'));
+    return view('colaborador.inscripcion_estudent.edit', compact('estudiante'));
 }
 
 public function update(Request $request, $id)
@@ -65,17 +65,15 @@ public function update(Request $request, $id)
     $estudiante = Estudiante::findOrFail($id);
     $estudiante->update($request->all());
 
-    return redirect()->route('colab.inscripcion.listado')->with('success', 'Estudiante actualizado correctamente.');
+    return redirect()->route('estudiantes.index')->with('success', 'Estudiante actualizado correctamente.');
 }
 
 public function destroy($id)
 {
-    $estudiante = Estudiante::findOrFail($id);
+   $estudiante = Estudiante::findOrFail($id);
     $estudiante->delete();
 
     return redirect()->back()->with('success', 'Estudiante eliminado correctamente.');
 }
-
-
 
 }
