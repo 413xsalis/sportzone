@@ -27,6 +27,11 @@ Bienvenido - Panel de control de instructores
         </ul>
       </div>
       @endif
+      @if(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
+        </div>
+      @endif
       <input type="hidden" name="nombre_grupo" value="{{ $grupo->nombre }}">
       <div class="mb-3">
         <label for="fecha" class="form-label">Fecha de asistencia:</label>
